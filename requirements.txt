@@ -1,0 +1,22 @@
+# Argus Python 依赖
+
+# Web
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+jinja2>=3.1.2
+aiofiles>=23.2.1
+
+# Config
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-dotenv>=1.0.0
+
+# Metrics
+psutil>=5.9.0
+
+# HTTP client (可选：用于调用 Aegis validate / ServiceAtlas 注册 SDK)
+httpx>=0.25.0
+
+# GPU（可选：NVIDIA）
+# nvidia-ml-py>=12.535.108  # 提供 pynvml
+

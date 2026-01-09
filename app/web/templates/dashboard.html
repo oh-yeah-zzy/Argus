@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="grid">
+  <div class="card">
+    <div class="card-head">
+      <div class="k">CPU</div>
+      <div class="v" id="cpu-usage">--%</div>
+    </div>
+    <div class="card-sub">
+      <span class="tag">TEMP</span>
+      <span class="mono" id="cpu-temp">--°C</span>
+    </div>
+    <svg class="spark" id="spark-cpu" viewBox="0 0 100 30" preserveAspectRatio="none"></svg>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="k">MEM</div>
+      <div class="v" id="mem-usage">--%</div>
+    </div>
+    <div class="card-sub">
+      <span class="tag">USED</span>
+      <span class="mono" id="mem-used">--</span>
+    </div>
+    <svg class="spark" id="spark-mem" viewBox="0 0 100 30" preserveAspectRatio="none"></svg>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="k">GPU</div>
+      <div class="v" id="gpu-usage">--%</div>
+    </div>
+    <div class="card-sub">
+      <span class="tag">TEMP</span>
+      <span class="mono" id="gpu-temp">--°C</span>
+    </div>
+    <svg class="spark" id="spark-gpu" viewBox="0 0 100 30" preserveAspectRatio="none"></svg>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-head">
+    <div class="panel-title">HISTORY</div>
+    <div class="panel-actions">
+      <button class="btn" data-range="900">15m</button>
+      <button class="btn active" data-range="3600">1h</button>
+      <button class="btn" data-range="21600">6h</button>
+      <button class="btn" data-range="86400">24h</button>
+      <button class="btn" data-range="259200">3d</button>
+      <button class="btn" data-range="604800">7d</button>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-block">
+      <div class="chart-title">USAGE (%)</div>
+      <svg class="chart" id="chart-usage" viewBox="0 0 600 200" preserveAspectRatio="none"></svg>
+      <div class="legend">
+        <span class="lg cpu">CPU</span>
+        <span class="lg mem">MEM</span>
+        <span class="lg gpu">GPU</span>
+      </div>
+    </div>
+
+    <div class="chart-block">
+      <div class="chart-title">TEMP (°C)</div>
+      <svg class="chart" id="chart-temp" viewBox="0 0 600 200" preserveAspectRatio="none"></svg>
+      <div class="legend">
+        <span class="lg cpu">CPU</span>
+        <span class="lg gpu">GPU</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-meta">
+    <span class="mono" id="sample-meta">no samples</span>
+    <span class="mono" id="source-meta"></span>
+  </div>
+</section>
+{% endblock %}

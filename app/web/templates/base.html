@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Argus · Host Telemetry</title>
+    <link rel="stylesheet" href="static/css/argus.css" />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <div class="scanline"></div>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-title">ARGUS</div>
+        <div class="brand-sub">host telemetry / history / viz</div>
+      </div>
+      <div class="topbar-right">
+        <div class="pill" id="conn-pill">CONNECTING</div>
+        <div class="clock" id="clock">--:--:--</div>
+      </div>
+    </header>
+
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+
+    <script src="static/js/dashboard.js" defer></script>
+  </body>
+</html>
+
