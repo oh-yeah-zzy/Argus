@@ -23,12 +23,12 @@ logger = get_logger("argus.app")
 
 
 def _build_service_meta() -> dict:
+    # API 文档不再公开，需要认证后才能访问
+    # 仅保留健康检查和静态资源为公开路径
     public_paths = [
         f"/{settings.service_id}/health",
         f"/{settings.service_id}/ready",
         f"/{settings.service_id}/static/**",
-        f"/{settings.service_id}/docs",
-        f"/{settings.service_id}/openapi.json",
     ]
     return {
         "version": settings.app_version,
